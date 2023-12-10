@@ -25,13 +25,13 @@ To force pip-compile to update all packages in an existing requirements.txt, run
 
 2. Activate the environment:
 
-        conda activate anomaly-analysis
+        conda activate tsa
 
         source env/bin/activate
 
 pip-compile requirements.in
 
-4. Install anomaly-analysis in editable mode for active development
+4. Install time-series-analysis in editable mode for active development
 
         pip install -e .
 
@@ -48,6 +48,12 @@ pip-compile requirements.in
 
     For conda:
 
-        conda remove --name anomaly-analysis --all
+        conda remove --name tsa --all
 
     For pip env - delete associated directory
+
+8. Updating with new dependencies
+
+        pip-compile --upgrade
+        
+        pip install --ignore-installed -r requirements.txt

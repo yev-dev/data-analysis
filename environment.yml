@@ -1,4 +1,4 @@
-name: anomaly-analysis
+name: tsa
 channels:
   - conda-forge
 dependencies:
