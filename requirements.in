@@ -9,3 +9,6 @@ tqdm
 pytest
 ipykernel
 jupyterlab
+tabulate
+lxml
+pandas_datareader

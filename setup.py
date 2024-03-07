@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-long_description = """Experimental package to explore financila analysis"""
+long_description = """Experimental package to explore time series analysis"""
 
 setup(name='tsa',
       version='0.1',
