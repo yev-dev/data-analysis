@@ -12,3 +12,4 @@ jupyterlab
 tabulate
 lxml
 pandas_datareader
+yfinance
