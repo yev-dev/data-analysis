@@ -52,8 +52,12 @@ pip-compile requirements.in
 
     For pip env - delete associated directory
 
-8. Updating with new dependencies
+8. Updating with new dependenciespip-compile --upgrade
 
         pip-compile --upgrade
         
         pip install --ignore-installed -r requirements.txt
+
+        Or
+
+        pip install --upgrade --force-reinstall -r requirements.txt
