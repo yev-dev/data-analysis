@@ -4,11 +4,13 @@ statsmodels
 scikit-learn
 scipy
 matplotlib
+plotly
 seaborn
 tqdm
+tabulate
 pytest
 ipykernel
-jupyterlab
+jupyter
 tabulate
 lxml
 pandas_datareader

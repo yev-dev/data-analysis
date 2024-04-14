@@ -43,9 +43,11 @@ cffi==1.16.0
     # via argon2-cffi-bindings
 charset-normalizer==3.3.2
     # via requests
-comm==0.2.1
-    # via ipykernel
-contourpy==1.2.0
+comm==0.2.2
+    # via
+    #   ipykernel
+    #   ipywidgets
+contourpy==1.2.1
     # via matplotlib
 cycler==0.12.1
     # via matplotlib
@@ -64,43 +66,51 @@ executing==2.0.1
     # via stack-data
 fastjsonschema==2.19.1
     # via nbformat
-fonttools==4.49.0
+fonttools==4.51.0
     # via matplotlib
 fqdn==1.5.1
     # via jsonschema
-frozendict==2.4.0
+frozendict==2.4.1
     # via yfinance
 h11==0.14.0
     # via httpcore
 html5lib==1.1
     # via yfinance
-httpcore==1.0.4
+httpcore==1.0.5
     # via httpx
 httpx==0.27.0
     # via jupyterlab
-idna==3.6
+idna==3.7
     # via
     #   anyio
     #   httpx
     #   jsonschema
     #   requests
-importlib-metadata==7.0.2
+importlib-metadata==7.1.0
     # via
     #   jupyter-client
     #   jupyter-lsp
     #   jupyterlab
     #   jupyterlab-server
     #   nbconvert
-importlib-resources==6.1.3
+importlib-resources==6.4.0
     # via matplotlib
 iniconfig==2.0.0
     # via pytest
-ipykernel==6.29.3
+ipykernel==6.29.4
     # via
     #   -r requirements.in
+    #   jupyter
+    #   jupyter-console
     #   jupyterlab
+    #   qtconsole
 ipython==8.18.1
-    # via ipykernel
+    # via
+    #   ipykernel
+    #   ipywidgets
+    #   jupyter-console
+ipywidgets==8.1.2
+    # via jupyter
 isoduration==20.11.0
     # via jsonschema
 jedi==0.19.1
@@ -111,9 +121,9 @@ jinja2==3.1.3
     #   jupyterlab
     #   jupyterlab-server
     #   nbconvert
-joblib==1.3.2
+joblib==1.4.0
     # via scikit-learn
-json5==0.9.22
+json5==0.9.24
     # via jupyterlab-server
 jsonpointer==2.4
     # via jsonschema
@@ -124,41 +134,54 @@ jsonschema[format-nongpl]==4.21.1
     #   nbformat
 jsonschema-specifications==2023.12.1
     # via jsonschema
-jupyter-client==8.6.0
+jupyter==1.0.0
+    # via -r requirements.in
+jupyter-client==8.6.1
     # via
     #   ipykernel
+    #   jupyter-console
     #   jupyter-server
     #   nbclient
-jupyter-core==5.7.1
+    #   qtconsole
+jupyter-console==6.6.3
+    # via jupyter
+jupyter-core==5.7.2
     # via
     #   ipykernel
     #   jupyter-client
+    #   jupyter-console
     #   jupyter-server
     #   jupyterlab
     #   nbclient
     #   nbconvert
     #   nbformat
-jupyter-events==0.9.0
+    #   qtconsole
+jupyter-events==0.10.0
     # via jupyter-server
-jupyter-lsp==2.2.4
+jupyter-lsp==2.2.5
     # via jupyterlab
-jupyter-server==2.13.0
+jupyter-server==2.14.0
     # via
     #   jupyter-lsp
     #   jupyterlab
     #   jupyterlab-server
+    #   notebook
     #   notebook-shim
-jupyter-server-terminals==0.5.2
+jupyter-server-terminals==0.5.3
     # via jupyter-server
-jupyterlab==4.1.4
-    # via -r requirements.in
+jupyterlab==4.1.6
+    # via notebook
 jupyterlab-pygments==0.3.0
     # via nbconvert
-jupyterlab-server==2.25.3
-    # via jupyterlab
+jupyterlab-server==2.26.0
+    # via
+    #   jupyterlab
+    #   notebook
+jupyterlab-widgets==3.0.10
+    # via ipywidgets
 kiwisolver==1.4.5
     # via matplotlib
-lxml==5.1.0
+lxml==5.2.1
     # via
     #   -r requirements.in
     #   pandas-datareader
@@ -167,7 +190,7 @@ markupsafe==2.1.5
     # via
     #   jinja2
     #   nbconvert
-matplotlib==3.8.3
+matplotlib==3.8.4
     # via
     #   -r requirements.in
     #   seaborn
@@ -179,19 +202,25 @@ mistune==3.0.2
     # via nbconvert
 multitasking==0.0.11
     # via yfinance
-nbclient==0.9.0
+nbclient==0.10.0
     # via nbconvert
-nbconvert==7.16.2
-    # via jupyter-server
-nbformat==5.9.2
+nbconvert==7.16.3
+    # via
+    #   jupyter
+    #   jupyter-server
+nbformat==5.10.4
     # via
     #   jupyter-server
     #   nbclient
     #   nbconvert
 nest-asyncio==1.6.0
     # via ipykernel
+notebook==7.1.2
+    # via jupyter
 notebook-shim==0.2.4
-    # via jupyterlab
+    # via
+    #   jupyterlab
+    #   notebook
 numpy==1.26.4
     # via
     #   -r requirements.in
@@ -214,9 +243,12 @@ packaging==24.0
     #   jupyterlab-server
     #   matplotlib
     #   nbconvert
+    #   plotly
     #   pytest
+    #   qtconsole
+    #   qtpy
     #   statsmodels
-pandas==2.2.1
+pandas==2.2.2
     # via
     #   -r requirements.in
     #   pandas-datareader
@@ -227,7 +259,7 @@ pandas-datareader==0.10.0
     # via -r requirements.in
 pandocfilters==1.5.1
     # via nbconvert
-parso==0.8.3
+parso==0.8.4
     # via jedi
 patsy==0.5.6
     # via statsmodels
@@ -235,16 +267,20 @@ peewee==3.17.1
     # via yfinance
 pexpect==4.9.0
     # via ipython
-pillow==10.2.0
+pillow==10.3.0
     # via matplotlib
 platformdirs==4.2.0
     # via jupyter-core
+plotly==5.20.0
+    # via -r requirements.in
 pluggy==1.4.0
     # via pytest
 prometheus-client==0.20.0
     # via jupyter-server
 prompt-toolkit==3.0.43
-    # via ipython
+    # via
+    #   ipython
+    #   jupyter-console
 psutil==5.9.8
     # via ipykernel
 ptyprocess==0.7.0
@@ -253,12 +289,14 @@ ptyprocess==0.7.0
     #   terminado
 pure-eval==0.2.2
     # via stack-data
-pycparser==2.21
+pycparser==2.22
     # via cffi
 pygments==2.17.2
     # via
     #   ipython
+    #   jupyter-console
     #   nbconvert
+    #   qtconsole
 pyparsing==3.1.2
     # via matplotlib
 pytest==8.1.1
@@ -281,8 +319,14 @@ pyzmq==25.1.2
     # via
     #   ipykernel
     #   jupyter-client
+    #   jupyter-console
     #   jupyter-server
-referencing==0.33.0
+    #   qtconsole
+qtconsole==5.5.1
+    # via jupyter
+qtpy==2.4.1
+    # via qtconsole
+referencing==0.34.0
     # via
     #   jsonschema
     #   jsonschema-specifications
@@ -304,16 +348,16 @@ rpds-py==0.18.0
     # via
     #   jsonschema
     #   referencing
-scikit-learn==1.4.1.post1
+scikit-learn==1.4.2
     # via -r requirements.in
-scipy==1.12.0
+scipy==1.13.0
     # via
     #   -r requirements.in
     #   scikit-learn
     #   statsmodels
 seaborn==0.13.2
     # via -r requirements.in
-send2trash==1.8.2
+send2trash==1.8.3
     # via jupyter-server
 six==1.16.0
     # via
@@ -335,11 +379,13 @@ statsmodels==0.14.1
     # via -r requirements.in
 tabulate==0.9.0
     # via -r requirements.in
-terminado==0.18.0
+tenacity==8.2.3
+    # via plotly
+terminado==0.18.1
     # via
     #   jupyter-server
     #   jupyter-server-terminals
-threadpoolctl==3.3.0
+threadpoolctl==3.4.0
     # via scikit-learn
 tinycss2==1.2.1
     # via nbconvert
@@ -353,15 +399,18 @@ tornado==6.4
     #   jupyter-client
     #   jupyter-server
     #   jupyterlab
+    #   notebook
     #   terminado
 tqdm==4.66.2
     # via -r requirements.in
-traitlets==5.14.1
+traitlets==5.14.2
     # via
     #   comm
     #   ipykernel
     #   ipython
+    #   ipywidgets
     #   jupyter-client
+    #   jupyter-console
     #   jupyter-core
     #   jupyter-events
     #   jupyter-server
@@ -370,9 +419,10 @@ traitlets==5.14.1
     #   nbclient
     #   nbconvert
     #   nbformat
-types-python-dateutil==2.8.19.20240106
+    #   qtconsole
+types-python-dateutil==2.9.0.20240316
     # via arrow
-typing-extensions==4.10.0
+typing-extensions==4.11.0
     # via
     #   anyio
     #   async-lru
@@ -394,9 +444,11 @@ webencodings==0.5.1
     #   tinycss2
 websocket-client==1.7.0
     # via jupyter-server
+widgetsnbextension==4.0.10
+    # via ipywidgets
 yfinance==0.2.37
     # via -r requirements.in
-zipp==3.17.0
+zipp==3.18.1
     # via
     #   importlib-metadata
     #   importlib-resources
