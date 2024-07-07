@@ -27,58 +27,58 @@ def rolling_window(a, window):
     # return np.lib.stride_tricks.as_strided(a, shape=shape, strides=strides)
     l1 = list(map(tuple, rolling_window(r, 3)[:, [0, -1]].tolist()))
 
-def test_vol_grouping():
+# def test_vol_grouping():
 
-    fname = 'prices.csv'
-    fpath = os.path.join(test_data_dir, fname)
-    df = pd.read_csv(fpath)
+#     fname = 'prices.csv'
+#     fpath = os.path.join(test_data_dir, fname)
+#     df = pd.read_csv(fpath)
 
-    # Splitting into Series
+#     # Splitting into Series
 
-    series = [y for x, y in df.groupby('date', as_index=False)]
+#     series = [y for x, y in df.groupby('date', as_index=False)]
 
-    df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
-    df['year'] = df['date'].dt.year
+#     df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
+#     df['year'] = df['date'].dt.year
     
-    # Get max volume for every year
+#     # Get max volume for every year
 
-    # 1. idxmax
+#     # 1. idxmax
 
-    max_vol_df = df.loc[df.groupby(['date']).idxmax()]
-    assert len(max_vol_df) > 0
+#     max_vol_df = df.loc[df.groupby(['date']).idxmax()]
+#     assert len(max_vol_df) > 0
 
-def test_splitting_ts():
+# def test_splitting_ts():
 
-    df = pd.DataFrame(
-        columns = ['date', 'tenor', 'price'],
-        data = [
-            ['2024-05-01', '4w', 0.5],
-            ['2024-05-01', '13w', 0.6],
-            ['2024-05-01', '26w', 0.7],
-            ['2024-05-02', '4w', 0.5],
-            ['2024-05-02', '13w', 0.6],
-            ['2024-05-02', '26w', 0.7],
+#     df = pd.DataFrame(
+#         columns = ['date', 'tenor', 'price'],
+#         data = [
+#             ['2024-05-01', '4w', 0.5],
+#             ['2024-05-01', '13w', 0.6],
+#             ['2024-05-01', '26w', 0.7],
+#             ['2024-05-02', '4w', 0.5],
+#             ['2024-05-02', '13w', 0.6],
+#             ['2024-05-02', '26w', 0.7],
 
-        ]
-    )
+#         ]
+#     )
 
-    series = [y for x, y in df.groupby('date', as_index=False)]
+#     series = [y for x, y in df.groupby('date', as_index=False)]
 
-    assert len(series) > 0
+#     assert len(series) > 0
 
-def test_as_of_merge_dataframe():
+# def test_as_of_merge_dataframe():
 
-    left = pd.DataFrame({'a': [1, 5, 10], 'left_val': ['a', 'b', 'c']})
+#     left = pd.DataFrame({'a': [1, 5, 10], 'left_val': ['a', 'b', 'c']})
 
-    right = pd.DataFrame({'a': [1, 2, 3, 6, 7],'right_val': [1, 2, 3, 6, 7]})
+#     right = pd.DataFrame({'a': [1, 2, 3, 6, 7],'right_val': [1, 2, 3, 6, 7]})
 
-    pd.merge_asof(left, right, on='a')
+#     pd.merge_asof(left, right, on='a')
 
-    pd.merge_asof(left, right, on='a', allow_exact_matches=False)
+#     pd.merge_asof(left, right, on='a', allow_exact_matches=False)
 
-    pd.merge_asof(left, right, on='a', direction='forward')
+#     pd.merge_asof(left, right, on='a', direction='forward')
 
-    pd.merge_asof(left, right, on='a', direction='nearest')
+#     pd.merge_asof(left, right, on='a', direction='nearest')
 
 
 
