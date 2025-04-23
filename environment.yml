@@ -1,4 +1,4 @@
-name: tsa
+name: data_analysis
 channels:
   - conda-forge
 dependencies:
