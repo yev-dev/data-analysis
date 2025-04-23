@@ -2,9 +2,9 @@ from setuptools import setup, find_packages
 
 long_description = """Experimental package to explore time series analysis"""
 
-setup(name='tsa',
+setup(name='data_analysis',
       version='0.1',
-      description='Anomaly analysis experimental library',
+      description='Data analysis experimental library',
       author='Yevgeniy Yermoshin',
       author_email='yev.developer@gmail.com',
       license='Apache 2.0',
