@@ -48,7 +48,7 @@ pip-compile requirements.in
 
     For conda:
 
-        conda remove --name tsa --all
+        conda remove --name data_analysis --all
 
     For pip env - delete associated directory
 
