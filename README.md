@@ -1,5 +1,5 @@
 
-# Experimental project expore statistical and ML techniques for anomaly analysis. 
+# Experimental project expore Data Analysis, Statistical and ML techniques. 
 
 ### Installation
 
